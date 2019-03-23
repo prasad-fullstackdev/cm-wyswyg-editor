@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="css/bundle.css" rel="stylesheet">
+    <script src="js/bundle.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <textarea id="code" name="code">
+<span style="font-size: 50pt;color:red;">I am <u>FontSize</u></span>          
+            <strong>I am Bold</strong>            
+            <b>I am Bold</b>            
+            <span style="font-size: 50pt;color:red;">I am <u>FontSize</u></span>          
+            <span style="background-color:red;">I am <u>FontSize</u></span>          
+            <b>10<sup>th</sup></b>
+            <span style="font-family:cursive;">I am cursive Font Family</span>       
+            <b><sup>1</sup>/<sub>4</sub></b>
+        </textarea>
+
+        <!-- <textarea id="code" name="code">
+          <h1>Robert Leroy Johnson</h1>
+          
+          <strong>Robert Leroy Johnson</strong> (May 8, 1911 – August 16, 1938) was an American blues singer and musician.
+          
+          <b>His landmark recordings from 1936–37 display <i><u>a combination of</u></i></b>
+          <ul><li>singing</li>
+          <li>guitar skills</li>
+          <li>songwriting talent</li></ul>
+          
+          Johnson's shadowy, poorly documented life and death at age 27 have <u>given rise to much legend</u>, including the Faustian myth that he sold his soul at a crossroads to achieve success. As an itinerant performer who played mostly on street corners, in juke joints, and at Saturday night dances, Johnson had little commercial success or public recognition in his lifetime.
+          
+          Johnson's records sold poorly during his lifetime. It was only after the reissue of his recordings in 1961 on the LP King of the Delta Blues Singers that his work reached a wider audience. Johnson is now recognized as a master of the blues, particularly of the Mississippi Delta blues style. He is credited by many rock musicians as an important influence; Eric Clapton has called Johnson "the most important blues singer that ever lived."<em>[1]</em><em>[2]</em> Johnson was inducted into the Rock and Roll Hall of Fame as an "Early Influence" in their first induction ceremony in 1986.<em>[3]</em> In 2003, David Fricke ranked Johnson fifth in Rolling Stone's list of the 100 Greatest Guitarists of All Time.<em>[4]</em>
+          </textarea> -->
+
+        <!-- <hr> -->
+
+        <!-- <div id="output-wrapper">
+            <h4>Output:</h4>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#output-source-wrapper">Source</a>
+                </li>
+                <li>
+                    <a href="#output-design">Design</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="output-source-wrapper" class="tab-pane active">
+                    <textarea id="output-source"></textarea>
+                </div>
+                <div id="output-design" class="tab-pane"></div>
+            </div>
+        </div>
+        <hr /> -->
+
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            initializeEditor();
+        });
+
+        function initializeEditor() {
+            // this.editor = CodeMirror.fromTextArea(document.getElementById('cm-editor'), {
+            //   mode: 'text/html',
+            //   lineNumbers: true,
+            //   lineWrapping: true,
+            //   extraKeys: {
+            //     "Shift-Alt-F": "autoFormatSelection",
+            //   },
+            //   foldGutter: true,
+            //   gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            // });
+            // console.log(this.editor);
+
+            var wysi = DocEditable.fromTextArea(document.getElementById("code"), {
+                // format: 'markdown'
+                format: 'html',
+                lineNumbers: true,
+                gutter: true,
+                lineWrapping: true,
+            });
+
+            window.wysi = wysi;
+            window.editor = wysi.editor;
+
+            // var outputTimeout = null;
+            // var outputDesign = document.getElementById("output-design");
+            // var outputSource = document.getElementById("output-source");
+
+
+            // function onchange() {
+            //     outputDesign.innerHTML = wysi.toHTML();
+            //     outputSource.innerHTML = wysi.toHTML('\n');
+            // }
+
+            // wysi.on("change", function () {
+            //     clearTimeout(outputTimeout);
+            //     outputTimeout = setTimeout(onchange, 500);
+            // });
+            // onchange();
+
+            // $("#output-wrapper .nav a").on('click', function (e) {
+            //     e.preventDefault();
+            //     $(this).tab('show');
+            // });
+        }
+    </script>
+
+</body>
+
+</html>
